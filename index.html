@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSSkin</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <div id="backgroundGrid"></div>
+
+        <header id="appHeader">
+            <span>VSSKIN</span>
+        </header>
+
+        <div id="dialView" class="view">
+            <div class="dial-container">
+                <div id="dial" class="dial">
+                    <div id="dialIndicator" class="dial-indicator"></div>
+                    <!-- Brands will be populated here by JavaScript -->
+                </div>
+                <div class="dial-info">
+                    <p class="tune-to-text"><span class="scramble-target">TUNE TO:</span> <span id="currentBrandName">VSSKIN</span></p>
+                </div>
+                <button id="previewThemeButton" class="cta-button">[ PREVIEW THEME + ]</button>
+            </div>
+        </div>
+        <div id="previewView" class="view" style="display: none;">
+            <div id="vsCodeEmulator" class="vscode-emulator">
+                <div class="vscode-title-bar">
+                    <div class="vscode-title-buttons">
+                        <span class="vscode-button red"></span>
+                        <span class="vscode-button yellow"></span>
+                        <span class="vscode-button green"></span>
+                    </div>
+                    <div class="vscode-title-text">VSSKIN PREVIEW - main.js</div>
+                </div>
+                <div class="vscode-body">
+                    <div class="vscode-activity-bar">
+                        <!-- Icons can be simple divs or actual SVGs later if desired -->
+                        <div class="vscode-activity-icon active"></div>
+                        <div class="vscode-activity-icon"></div>
+                        <div class="vscode-activity-icon"></div>
+                    </div>
+                    <div class="vscode-sidebar">
+                        <div class="vscode-sidebar-header">EXPLORER</div>
+                        <ul class="vscode-file-list">
+                            <li>📄 main.js</li>
+                            <li>📄 style.css</li>
+                            <li>📄 index.html</li>
+                        </ul>
+                    </div>
+                    <div class="vscode-editor-area">
+                        <div class="vscode-tabs">
+                            <div class="vscode-tab active">main.js <span class="vscode-tab-close">✕</span></div>
+                            <div class="vscode-tab">style.css <span class="vscode-tab-close">✕</span></div>
+                        </div>
+                        <div id="vsCodeSnippetContainer" class="vscode-code-area">
+                            <!-- VS Code Snippet will be injected here by JavaScript -->
+                            <pre><code class="language-javascript">// Select a theme using the dial!</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="vscode-status-bar">
+                    <div class="vscode-status-left">main</div>
+                    <div class="vscode-status-right">Ln 1, Col 1</div>
+                </div>
+
+                <!-- Preview Navigation Controls -->
+                <div class="preview-nav-controls">
+                    <button id="closePreviewButton" class="preview-nav-button" title="Back to Dial">✕</button>
+                    <button id="prevThemeButton" class="preview-nav-button" title="Previous Theme">&lt;</button>
+                    <button id="nextThemeButton" class="preview-nav-button" title="Next Theme">&gt;</button>
+                    <a id="installThemeLink" href="#" target="_blank" class="cta-button preview-install-button">[ INSTALL TO VS CODE ]</a>
+                </div>
+            </div>
+        </div>
+
+        <footer id="appFooter">
+            <span>© 2024</span>
+            <span id="currentTime"></span> <!-- For dynamic time later if desired -->
+        </footer>
+
+        <!-- Inside #app, after other elements -->
+        <div id="glitchOverlay" class="glitch-overlay">
+            <!-- Pixels will be generated here by JS or handled by CSS if using a single element with filter -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
